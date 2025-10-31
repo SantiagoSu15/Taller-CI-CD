@@ -16,6 +16,6 @@ public class Chef {
     @Id
     private String chefId;
     private tipoChef tipoChef;
-    private int temporada;
+    private Integer temporada;
     private String fullName;
 }

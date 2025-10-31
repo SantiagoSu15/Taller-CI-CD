@@ -1,4 +1,4 @@
-package com.example.taller_CI.DC.service;
+package com.example.taller_CI.DC.service.Implementaciones;
 
 import com.example.taller_CI.DC.Repository.ChefRepository;
 import com.example.taller_CI.DC.Repository.RecetaRepository;
@@ -12,9 +12,8 @@ import com.example.taller_CI.DC.model.DTO.Request.RequestRecetaDTO;
 import com.example.taller_CI.DC.model.DTO.Response.ResponseRecetaDTO;
 import com.example.taller_CI.DC.model.Receta;
 import com.example.taller_CI.DC.model.tipoChef;
+import com.example.taller_CI.DC.service.Interfaces.RecetaService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -25,7 +24,7 @@ import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Service
-public class RecetaService {
+public class RecetaServiceImp implements RecetaService {
     private final RecetaRepository recetaRepository;
     private final ChefRepository chefRepository;
     private final RecetaRequestMapper recetaRequestMapper;
