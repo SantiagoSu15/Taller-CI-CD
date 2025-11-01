@@ -54,10 +54,7 @@ El proyecto sigue el patrón **MVC (Modelo - Vista - Controlador)**:
 **Link de swagger en azure:**
 - https://taller-ci-cd-dkhbcmbvghesd5a2.canadacentral-01.azurewebsites.net/swagger-ui/index.html
 
----
 
-
-## Endpoints 
 
 ---
 ## CI/CD con GitHub Actions
@@ -87,5 +84,136 @@ Se realizaron pruebas unitarias para asegurar el correcto funcionamiento de los 
 
 - Devolver error si se consulta una receta inexistente.
 ![Prueba jacoco](/docs/recetaEx.png)
+
+---
+## Endpoints 
+
+### Receta Controller
+**El Request será de la forma**
+
+- Put  ```/recetas/{id}```
+- Get ```/recetas/{id}```
+
+        {id} Un numero entero
+
+
+- Get ```/recetas/tipo-chef/{chef}```
+
+        {chef} Un String de los diponibles: 
+                      JURADO,TELEVIDENTE,CONCURSANTE
+
+
+
+- Get ```/recetas/temporada/{temporada}```
+
+        {id} Un numero entero
+
+- Get ```/recetas/ingrediente/{ingrediente}```
+
+       {ingrediente} Un numero String cualquiera
+
+
+- Post ```/recetas```
+
+        {
+        "titulo": "string",
+        "ingredientes": [
+        "string"
+        ],
+        "pasosPreparacion": [
+        "string"
+        ],
+        "chefId": "string",
+        "temporada": 0
+        }
+
+
+**El Response será de la forma:** 
+
+- Put  ```/recetas/{id}```
+- Get ```/recetas/{id}```
+
+        {
+            "titulo": "string",
+            "ingredientes": [
+                "string"
+            ],
+            "pasosPreparacion": [
+               "string"
+            ],
+            "temporada": 0,
+            "fecha": "2025-11-01",
+            "nombreChef": "string",
+            "tipoChef": "string"
+        }
+
+- Post ```/recetas```
+- Get ```/recetas/tipo-chef/{chef}```
+- Get ```/recetas```
+- Get ```/recetas/temporada/{temporada}```
+- Get ```/recetas/ingrediente/{ingrediente}```
+
+        [
+            {
+                "titulo": "string",
+                "ingredientes": [
+                    "string"
+                ],
+                "pasosPreparacion": [
+                   "string"
+                ],
+                "temporada": 0,
+                "fecha": "2025-11-01",
+                "nombreChef": "string",
+                "tipoChef": "string"
+            },
+            {
+                "titulo": "string",
+                "ingredientes": [
+                    "string"
+                ],
+                "pasosPreparacion": [
+                   "string"
+                ],
+                "temporada": 0,
+                "fecha": "2025-11-01",
+                "nombreChef": "string",
+                "tipoChef": "string"
+            }
+        ]
+        
+
+
+
+
+
+
+
+
+
+### Chef Controller
+
+**El request sera de la forma:**
+- Post ```/chefs```
+
+        {
+        "tipoChef": "JURADO",
+        "temporada": 0,
+        "fullName": "string"
+        }
+Donde tipo chef hace parte del conjutno: JURADO,TELEVIDENTE,CONCURSANTE
+
+
+
+**El response para Post y Put serán de la forma:**
+
+- /chefs
+
+            {
+                "chefId": "string",
+                "tipoChef": "JURADO",
+                "temporada": 0,
+                "fullName": "string"
+            }
 
 
