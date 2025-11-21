@@ -78,7 +78,8 @@ jobs:
         run: |
           echo "Desplegando en Railway..."
           if [ "${{ github.ref_name }}" = "Develop" ]; then
-            RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN_STAGING }} railway up --environment Staging -- --f091b543-82ac-4290-8f27-5832b0940fd9
+            RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN_STAGING }} railway up --service Taller-CI-CD --environment Staging
           elif [ "${{ github.ref_name }}" = "main" ]; then
-            RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN_PRODUCTION }} railway up --environment production -- --f091b543-82ac-4290-8f27-5832b0940fd9
+            RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN_PRODUCTION }} railway up --service Taller-CI-CD --environment Production
           fi
+      
