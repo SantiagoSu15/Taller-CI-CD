@@ -80,6 +80,6 @@ jobs:
           if [ "${{ github.ref_name }}" = "Develop" ]; then
             RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN_STAGING }} railway up --service Taller-CI-CD --environment Staging
           elif [ "${{ github.ref_name }}" = "main" ]; then
-            RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN_PRODUCTION }} railway up --service Taller-CI-CD --environment Production
+            RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN_PRODUCTION }} railway up --service Taller-CI-CD --environment production
           fi
       
